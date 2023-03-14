@@ -3,13 +3,11 @@ package com.tiger.ledger;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 
-@EnableTransactionManagement
+@EnableMethodSecurity(securedEnabled = true, jsr250Enabled = true)
 @SpringBootApplication
 @MapperScan("com.tiger.ledger.domain.repository.mapper")
-@ComponentScan("com.tiger.ledger")
 public class LedgerApplication {
 
     public static void main(String[] args) {
