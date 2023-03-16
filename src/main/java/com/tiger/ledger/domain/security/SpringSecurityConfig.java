@@ -13,7 +13,7 @@ public class SpringSecurityConfig {
         return http.authorizeHttpRequests(authorize -> {
             try {
                 authorize// 放行登录接口
-                        .requestMatchers("/api/auth/login").permitAll()// 放行资源目录
+                        .requestMatchers("/api/auth/login","/test/login").permitAll()// 放行资源目录
                         .requestMatchers("/static/**", "/resources/**").permitAll()// 其余的都需要权限校验
                         .anyRequest().authenticated()// 防跨站请求伪造
                         .and().csrf(csrf -> csrf.disable());
