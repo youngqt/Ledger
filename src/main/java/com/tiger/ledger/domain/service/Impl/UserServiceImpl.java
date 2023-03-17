@@ -5,11 +5,13 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tiger.ledger.domain.model.entity.User;
 import com.tiger.ledger.domain.repository.mapper.UserMapper;
 import com.tiger.ledger.domain.service.UserService;
+import org.springframework.stereotype.Service;
 
 /**
  * @author yangqt
  * @since 2023/3/16
  */
+@Service
 public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements UserService {
     @Override
     public User getByUsername(String username) {
